@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de Agricultores</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="index.html">
+            Registrar Agricultor
+        </a>
+
+        |
+
+        <a href="consulta.html">
+            Consultar Agricultores
+        </a>
+
+    </nav>
+
+    <h1>Registro de Agricultores</h1>
+
+    <form>
+
+        <label for="cedula">Cédula</label>
+        <br>
+        <input type="text" id="cedula">
+        <br><br>
+
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" id="nombre">
+        <br><br>
+
+        <label for="area">Área (ha)</label>
+        <br>
+        <input type="number" id="area">
+        <br><br>
+
+        <label for="cultivo">Cultivo</label>
+        <br>
+        <input type="text" id="cultivo">
+        <br><br>
+
+        <label for="inversion">Inversión ($)</label>
+        <br>
+        <input type="number" id="inversion">
+        <br><br>
+
+        <label>Ubicación del predio</label>
+
+        <div id="map"></div>
+
+        <br>
+
+        <button type="button" id="guardar">
+            Guardar
+        </button>
+
+    </form>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

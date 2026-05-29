@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Predio</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#info{
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#map{
+    height: 600px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Ubicación del Predio</h1>
+
+<div id="info">
+
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+
+    <p><strong>Cédula:</strong> <span id="cedula"></span></p>
+
+    <p><strong>Área:</strong> <span id="area"></span></p>
+
+    <p><strong>Cultivo:</strong> <span id="cultivo"></span></p>
+
+    <p><strong>Inversión:</strong> <span id="inversion"></span></p>
+
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="predio.js"></script>
+
+</body>
+
+</html>
