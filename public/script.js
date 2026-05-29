@@ -28,15 +28,10 @@ let drawControl = new L.Control.Draw({
     draw: {
 
         polygon: true,
-
         polyline: false,
-
         rectangle: false,
-
         circle: false,
-
         marker: false,
-
         circlemarker: false
 
     },
@@ -71,7 +66,16 @@ mapa.on(L.Draw.Event.CREATED, function (event) {
 
     poligonoGeoJSON = layer.toGeoJSON();
 
-    console.log(poligonoGeoJSON);
+    // =====================
+    // CALCULAR AREA
+    // =====================
+
+    const areaMetros = turf.area(poligonoGeoJSON);
+
+    const areaHectareas = areaMetros / 10000;
+
+    document.getElementById("area").value =
+        areaHectareas.toFixed(2);
 
 });
 
@@ -84,9 +88,13 @@ const botonGuardar = document.getElementById("guardar");
 botonGuardar.addEventListener("click", async () => {
 
     const cedula = document.getElementById("cedula").value;
+
     const nombre = document.getElementById("nombre").value;
+
     const area = document.getElementById("area").value;
+
     const cultivo = document.getElementById("cultivo").value;
+
     const inversion = document.getElementById("inversion").value;
 
     // =====================

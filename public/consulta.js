@@ -1,12 +1,23 @@
+let agricultores = [];
+
 async function cargarAgricultores() {
 
     const respuesta = await fetch('/agricultores');
 
-    const agricultores = await respuesta.json();
+    agricultores = await respuesta.json();
 
-    const tbody = document.querySelector('#tablaAgricultores tbody');
+    mostrarAgricultores(agricultores);
 
-    agricultores.forEach(agricultor => {
+}
+
+function mostrarAgricultores(lista) {
+
+    const tbody =
+        document.querySelector('#tablaAgricultores tbody');
+
+    tbody.innerHTML = "";
+
+    lista.forEach(agricultor => {
 
         const fila = document.createElement('tr');
 
@@ -17,7 +28,6 @@ async function cargarAgricultores() {
             <td>${agricultor.area}</td>
             <td>${agricultor.cultivo}</td>
             <td>${agricultor.inversion}</td>
-
             <td>
                 <a href="predio.html?id=${agricultor.id}">
                     Ver Predio
@@ -30,5 +40,21 @@ async function cargarAgricultores() {
     });
 
 }
+
+document.getElementById("buscarCedula")
+.addEventListener("input", function(){
+
+    const cedulaBuscada =
+        this.value.toLowerCase();
+
+    const filtrados =
+        agricultores.filter(a =>
+            a.cedula.toLowerCase()
+            .includes(cedulaBuscada)
+        );
+
+    mostrarAgricultores(filtrados);
+
+});
 
 cargarAgricultores();
